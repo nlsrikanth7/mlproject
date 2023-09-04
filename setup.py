@@ -1,3 +1,4 @@
+import os
 from setuptools import find_packages, setup
 from typing import List
 
@@ -20,7 +21,7 @@ version = '0.0.1',
 author ='nlsrikanth7',
 author_email= 'nlsrikanth@gmail.com',
 packages = find_packages(),
-install_requires = ['pandas', 'numpy', 'seaborn']
-# install_requires = get_requirements('requirements.txt')
+# install_requires = ['pandas', 'numpy', 'seaborn']
+install_requires = get_requirements('requirements.txt')
 
 )
