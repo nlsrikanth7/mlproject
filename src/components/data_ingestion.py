@@ -1,11 +1,15 @@
 import os
-# to use custom exception /Users/shrikanthnallapati/MLProject/src/components/data_ingestion.py
-# src/logger.py
-import sys 
-import logging
+import sys #to use custom exception
 from src.exception import CustomException
 from src.logger import logging 
 import pandas as pd
+
+# import logging
+# from logger import logging
+# import src.exception as exception
+# from exception import CustomException
+# import src.logger as logger 
+# from logger import logging
 
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
