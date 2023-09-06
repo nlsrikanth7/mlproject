@@ -2,6 +2,7 @@ import os
 # to use custom exception /Users/shrikanthnallapati/MLProject/src/components/data_ingestion.py
 # src/logger.py
 import sys 
+import logging
 from src.exception import CustomException
 from src.logger import logging 
 import pandas as pd
@@ -13,9 +14,9 @@ from dataclasses import dataclass
 
 @dataclass   # Decorator
 class DataIngestionConfig:
-    train_data_path: str = os.path.join('artifact', "train.csv")
-    test_data_path: str = os.path.join('artifact', "test.csv")
-    raw_data_path: str = os.path.join('artifact', "raw.csv")
+    train_data_path: str = os.path.join('artifacts', "train.csv")
+    test_data_path: str = os.path.join('artifacts', "test.csv")
+    raw_data_path: str = os.path.join('artifacts', "raw.csv")
 
 class DataIngestion:
     def __init__(self):
@@ -24,11 +25,12 @@ class DataIngestion:
     def initiate_data_ingestion(self):
         logging.info("Entered the data ingestion method or component")
         try:
-            # Reading the data from somewhere from desktop or API or etc
+            # Reading the data from somewhere from desktop or API or etc 
+            # notebook/data/stud.csv
             df = pd.read_csv('notebook/data/stud.csv')
             logging.info("Read the dataset as dataframe")
 
-            #creating directories for the artifact
+            #creating directories for the artifacts
             os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok = True)
 
             #Convert the raw data into CSV file 
